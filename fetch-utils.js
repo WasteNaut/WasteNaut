@@ -28,18 +28,29 @@ export async function signOutUser() {
 }
 
 /* Data functions */
+export async function getProfile(user_id) {
+    const response = await client
+        .from('profiles')
+        .select('*')
+        .match({ user_id: user_id })
+        .maybeSingle();
+    return response;
+}
+
 export async function getProfileById(id) {
     const response = await client.from('profiles').select('*').match({ id }).single();
     // return checkError(response);
 
-    //     export async function upsertProfile(profile) {
-    //         const response = await client
-    //             .from('profiles')
-    //             .upsert(profile, { onConflict: 'user_id' })
-    //             .single();
-    //         return response;
-    //     }
+    return response;
 }
+// }
+
+//     export async function upsertProfile(profile) {
+//         const response = await client
+//             .from('profiles')
+//             .upsert(profile, { onConflict: 'user_id' })
+//             .single();
+
 // create getProfileById function
 // call it inside createListItem and set it to variable
 // pass it through .insert and set it equal to profileId
