@@ -8,7 +8,7 @@
 
         <!-- title and favicon -->
         <title>Supabase Web App</title>
-        <link rel="icon" type="image/x-icon" href="/assets/alchemy-favicon.png" />
+        <link rel="icon" type="image/x-icon" href="/assets/DALL_E_2022-12-09_13.00.00_-_astronaut_coming_out_of_a_galactic_refrigerator_with_produce__modern_logo__bright_design__colorful-removebg-preview.png" />
 
         <!-- js -->
         <script
@@ -34,6 +34,7 @@
         <!-- css -->
         <link rel="stylesheet" href="/styles/reset.css" />
         <link rel="stylesheet" href="/styles/global.css" />
+        <link rel="stylesheet" href="/styles/styles.css"/>
         <!-- add link for page specific css -->
     </head>
 
@@ -49,15 +50,26 @@
         </header>
 
         <main>
-            <img src="./assets/food-cover02.png" height="300px"/>
+            <img id="hero-banner" src="./assets/food-cover02.png" height="300px"/>
+            <div class="produce-form">
+            <div class="produce">
             <input name="produce" id="produce" type="text">Add Your Produce Here!</input>
+            </div>
+            <div class ="quantity">
             <input type="number" id="quantity" min="1" max="25" name="Quantity">
                 Quantity
             </input>
-            <input type="date" id="freshness" min="1" max="14">
+            </div>
+            <div class="expiration">
+            <input type="date" id="expiration" min="1" max="14">
                 Expiration
             </input>
+        </div>
             <button type="submit" id="submit-btn">Submit</button>
+            </div>
+            <div class="produce-list">
+                
+            </div>
         </main>
     </body>
 </html>
