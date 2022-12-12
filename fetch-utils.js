@@ -28,3 +28,43 @@ export async function signOutUser() {
 }
 
 /* Data functions */
+export async function getProfileById(id) {
+    const response = await client.from('profiles').select('*').match({ id }).single();
+    // return checkError(response);
+
+    //     export async function upsertProfile(profile) {
+    //         const response = await client
+    //             .from('profiles')
+    //             .upsert(profile, { onConflict: 'user_id' })
+    //             .single();
+    //         return response;
+    //     }
+}
+// create getProfileById function
+// call it inside createListItem and set it to variable
+// pass it through .insert and set it equal to profileId
+
+export async function createListItem(name, quantity, profile_id) {
+    const profile = await getProfileById(profile_id);
+    const response = await client.from('produce').insert({
+        name: name,
+        quantity: quantity,
+        profile_id: profile_id,
+    });
+    // if (response.error) {
+    //     console.error(response.error.message);
+    // } else {
+    //     return response.data;
+    // }
+}
+
+export async function getList() {
+    const response = await client.from('produce').select().match({
+        profile_id: client.auth.user().profile_id,
+    });
+    //     if (response.error) {
+    //         console.error(response.error.message);
+    //     } else {
+    //         return response.data;
+    //     }
+}
