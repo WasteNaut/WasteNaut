@@ -49,22 +49,22 @@ export async function createListItem(name, quantity, profile_id) {
     const response = await client.from('produce').insert({
         name: name,
         quantity: quantity,
-        profile_id: profile_id,
+        profile_id: profile,
     });
     // if (response.error) {
     //     console.error(response.error.message);
     // } else {
-    //     return response.data;
-    // }
+    return response.data;
 }
+// }
 
 export async function getList() {
     const response = await client.from('produce').select().match({
         profile_id: client.auth.user().profile_id,
     });
-    //     if (response.error) {
-    //         console.error(response.error.message);
-    //     } else {
-    //         return response.data;
-    //     }
+    // if (response.error) {
+    //     console.error(response.error.message);
+    // } else {
+    return response.data;
 }
+// }
