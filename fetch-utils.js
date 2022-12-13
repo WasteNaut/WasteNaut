@@ -50,6 +50,8 @@ export async function upsertProfile(profile) {
         .from('profiles')
         .upsert(profile, { onConflict: 'user_id' })
         .single();
+
+    return response;
 }
 // create getProfileById function
 // call it inside createListItem and set it to variable

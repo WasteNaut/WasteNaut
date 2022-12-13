@@ -41,7 +41,7 @@ window.addEventListener('load', async () => {
             }
         }
     }
-    fetchAndDisplayProfile();
+    // fetchAndDisplayProfile();
 });
 
 profileForm.addEventListener('submit', async (e) => {
@@ -69,7 +69,7 @@ profileForm.addEventListener('submit', async (e) => {
     }
 
     const response = await upsertProfile(profileObj);
-
+    console.log('response', response);
     error = response.error;
 
     if (error) {
@@ -81,20 +81,20 @@ profileForm.addEventListener('submit', async (e) => {
     }
 });
 
-async function fetchAndDisplayProfile() {
-    profileDetailEl.textContent = '';
-    const profile = await getProfileById(id);
-    headerTitle.textContent = `${profile.username}'s profile`;
+// async function fetchAndDisplayProfile() {
+//     profileDetailEl.textContent = '';
+//     const profile = await getProfileById(id);
+//     headerTitle.textContent = `${profile.username}'s profile`;
 
-    const fav_food = document.createElement('p');
-    fav_food.textContent = profile.fav_food;
+//     const fav_food = document.createElement('p');
+//     fav_food.textContent = profile.fav_food;
 
-    if (profile.avatar === null) {
-        imgEl.src =
-            '../assets/DALL_E_2022-12-09_13.00.00_-_astronaut_coming_out_of_a_galactic_refrigerator_with_produce__modern_logo__bright_design__colorful-removebg-preview.png';
-    } else {
-        imgEl.src = profile.avatar;
-        usernameHeaderEl.textContent = profile.username;
-    }
-    profileDetailEl.append(imgEl, usernameHeaderEl, fav_food);
-}
+//     if (profile.avatar === null) {
+//         imgEl.src =
+//             '../assets/DALL_E_2022-12-09_13.00.00_-_astronaut_coming_out_of_a_galactic_refrigerator_with_produce__modern_logo__bright_design__colorful-removebg-preview.png';
+//     } else {
+//         imgEl.src = profile.avatar;
+//         usernameHeaderEl.textContent = profile.username;
+//     }
+//     profileDetailEl.append(imgEl, usernameHeaderEl, fav_food);
+// }
