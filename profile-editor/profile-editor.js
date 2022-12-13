@@ -1,32 +1,22 @@
 import '../auth/user.js';
-import { getProfileById, getProfile, uploadImage, getUser, upsertProfile } from '../fetch-utils.js';
+import { getProfile, uploadImage, getUser, upsertProfile } from '../fetch-utils.js';
 
 const profileForm = document.getElementById('profile-form');
 const updateBtn = document.getElementById('update-profile-btn');
 const userNameInput = document.querySelector('[name=username]');
-const avatarInput = document.querySelector('[name=avatar]');
 const errorDisplay = document.getElementById('error-display');
 const preview = document.getElementById('preview');
 const fav_food = document.querySelector('[name=fav-food]');
-const profileDetailEl = document.querySelector('.profile-display');
-const imgEl = document.getElementById('img-input');
-const usernameHeaderEl = document.querySelector('.username-header');
-const headerTitle = document.querySelector('.title');
-
-// const params = new URLSearchParams(location.search);
-// const id = params.get('id');
 
 let error = null;
 let profile = null;
 
 const user = getUser();
-console.log(user, 'user');
 
 window.addEventListener('load', async () => {
     const response = await getProfile(user.id);
     error = response.error;
     profile = response.data;
-    console.log(profile, 'profile');
 
     if (error) {
         errorDisplay.textContent = error.message;
@@ -56,9 +46,9 @@ profileForm.addEventListener('submit', async (e) => {
         fav_food: formData.get('fav-food'),
         avatar: formData.get('avatar'),
     };
-    console.log(profileObj, 'profile Obj');
+
     const imageFile = formData.get('avatar-input');
-    console.log(imageFile, 'image file');
+
     if (imageFile.size) {
         const imagePath = `${user.id}/${imageFile.name}`;
 
@@ -68,7 +58,6 @@ profileForm.addEventListener('submit', async (e) => {
     }
 
     const response = await upsertProfile(profileObj);
-    console.log('response', response);
     error = response.error;
 
     if (error) {
