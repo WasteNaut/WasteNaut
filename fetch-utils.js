@@ -6,6 +6,7 @@ const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 /* Auth related functions */
 
 export function getUser() {
+    console.log(client.auth.user());
     return client.auth.user();
 }
 
@@ -57,12 +58,14 @@ export async function upsertProfile(profile) {
 // call it inside createListItem and set it to variable
 // pass it through .insert and set it equal to profileId
 
-export async function createListItem(name, quantity, profile_id) {
-    const profile = await getProfileById(profile_id);
+export async function createListItem(name, quantity) {
+    const user = getUser();
+    const profile = await getProfile(user.id);
+    console.log(profile.data, 'profile');
     const response = await client.from('produce').insert({
         name: name,
         quantity: quantity,
-        profile_id: profile,
+        profile_id: profile.data.id,
     });
     // if (response.error) {
     //     console.error(response.error.message);
@@ -71,9 +74,9 @@ export async function createListItem(name, quantity, profile_id) {
 }
 // }
 
-export async function getList() {
-    const response = await client.from('produce').select().match({
-        profile_id: client.auth.user().profile_id,
+export async function getList(profile_id) {
+    const response = await client.from('produce').select('*').match({
+        profile_id,
     });
     // if (response.error) {
     //     console.error(response.error.message);
