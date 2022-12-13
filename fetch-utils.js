@@ -45,12 +45,12 @@ export async function getProfileById(id) {
 }
 // }
 
-//     export async function upsertProfile(profile) {
-//         const response = await client
-//             .from('profiles')
-//             .upsert(profile, { onConflict: 'user_id' })
-//             .single();
-
+export async function upsertProfile(profile) {
+    const response = await client
+        .from('profiles')
+        .upsert(profile, { onConflict: 'user_id' })
+        .single();
+}
 // create getProfileById function
 // call it inside createListItem and set it to variable
 // pass it through .insert and set it equal to profileId
@@ -79,3 +79,16 @@ export async function getList() {
     return response.data;
 }
 // }
+
+export async function uploadImage(imagePath, imageFile) {
+    const bucket = client.storage.from('avatars');
+    const response = await bucket.upload(imagePath, imageFile, {
+        cacheControl: '3600',
+        upsert: true,
+    });
+    if (response.error) {
+        return null;
+    }
+    const url = `${SUPABASE_URL}/storage/v1/object/public/${response.data.Key}`;
+    return url;
+}

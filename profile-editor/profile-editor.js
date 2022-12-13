@@ -1,8 +1,8 @@
 import '../auth/user.js';
-import { getProfileById, getProfile, uploadImage, getUser } from '../fetch-utils.js';
+import { getProfileById, getProfile, uploadImage, getUser, upsertProfile } from '../fetch-utils.js';
 
-const profileForm = document.getElementById('profile-form');
-const updateBtn = profileForm.querySelector('button');
+const profileForm = document.getElementById('#profile-form');
+const updateBtn = profileForm.querySelector('#update-profile-btn');
 const userNameInput = profileForm.querySelector('[name=username]');
 const avatarInput = profileForm.querySelector('[name=avatar]');
 const errorDisplay = document.getElementById('error-display');
@@ -23,14 +23,6 @@ const user = getUser();
 console.log(user, 'user');
 
 window.addEventListener('load', async () => {
-    if (!id) {
-        location.assign('/');
-        return;
-    }
-    fetchAndDisplayProfile();
-});
-
-window.addEventListener('load', async () => {
     const response = await getProfile(user.id);
     error = response.error;
     profile = response.data;
@@ -48,6 +40,43 @@ window.addEventListener('load', async () => {
                 fav_food.value = profile.fav_food;
             }
         }
+    }
+    fetchAndDisplayProfile();
+});
+
+profileForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    updateBtn.disabled = true;
+    updateBtn.textContent = 'Saving...';
+
+    const formData = new FormData(profileForm);
+
+    const profileObj = {
+        username: formData.get('username'),
+        fav_food: formData.get('fav_food'),
+    };
+
+    const imageFile = formData.get('avatar');
+
+    if (imageFile.size) {
+        const imagePath = `${user.id}/${imageFile.name}`;
+
+        const url = await uploadImage(imagePath, imageFile);
+
+        profileObj.avatar_url = url;
+    }
+
+    const response = await upsertProfile(profileObj);
+
+    error = response.error;
+
+    if (error) {
+        errorDisplay.textContent = error.message;
+        updateBtn.disabled = false;
+        updateBtn.textContent = 'Update Profile';
+    } else {
+        location.assign('/');
     }
 });
 

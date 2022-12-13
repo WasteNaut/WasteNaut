@@ -56,13 +56,12 @@
         </header>
 
         <main>
-            <div class="profile-page">
-                <h2 class="username-header"></h2>
-                <div class="profile-detail">
+            <form id="profile-form">
+                <div class="profile-page">
+                    <h2 class="username-header"></h2>
                     <div class="name-display">
                         <label>Favorite food:</label>
                         <input name="fav-food" id="fav-food" />
-                        <button type="submit" id="fav-food-btn">Submit</button>
                         <label
                             >Username
                             <input
@@ -82,11 +81,12 @@
                             src="/assets/DALL_E_2022-12-09_13.00.00_-_astronaut_coming_out_of_a_galactic_refrigerator_with_produce__modern_logo__bright_design__colorful-removebg-preview.png"
                         />
                         <button type="submit" id="update-profile-btn">Update profile!</button>
-                        <div class="profile-display"></div>
+
                         <p id="error-display"></p>
                     </div>
                 </div>
-            </div>
+            </form>
+            <div class="profile-display"></div>
         </main>
     </body>
 </html>
