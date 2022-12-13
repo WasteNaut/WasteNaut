@@ -24,10 +24,11 @@ form.addEventListener('submit', async (e) => {
     const newItem = await createListItem(name, quantity);
     if (newItem) {
         displayList();
-    } else {
-        error.textContent = 'Something went wrong while adding your item';
+        // } else {
+        //     error.textContent = 'Something went wrong while adding your item';
     }
 });
+
 /* Display Functions */
 
 async function displayList() {
