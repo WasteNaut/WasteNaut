@@ -1,15 +1,15 @@
 import '../auth/user.js';
 import { getProfileById, getProfile, uploadImage, getUser, upsertProfile } from '../fetch-utils.js';
 
-const profileForm = document.getElementById('#profile-form');
-const updateBtn = profileForm.querySelector('#update-profile-btn');
-const userNameInput = profileForm.querySelector('[name=username]');
-const avatarInput = profileForm.querySelector('[name=avatar]');
+const profileForm = document.getElementById('profile-form');
+const updateBtn = document.getElementById('update-profile-btn');
+const userNameInput = document.querySelector('[name=username]');
+const avatarInput = document.querySelector('[name=avatar]');
 const errorDisplay = document.getElementById('error-display');
 const preview = document.getElementById('preview');
-const fav_food = profileForm.querySelector('[profile=fav-food]');
-const profileDetailEl = document.getElementById('profile-display');
-const imgEl = document.querySelector('#avatar-img');
+const fav_food = document.querySelector('[profile=fav-food]');
+const profileDetailEl = document.querySelector('.profile-display');
+const imgEl = document.getElementById('img-input');
 const usernameHeaderEl = document.querySelector('.username-header');
 const headerTitle = document.querySelector('.title');
 
@@ -54,17 +54,18 @@ profileForm.addEventListener('submit', async (e) => {
 
     const profileObj = {
         username: formData.get('username'),
-        fav_food: formData.get('fav_food'),
+        fav_food: formData.get('fav-food'),
+        // avatar: formData.get('avatar'),
     };
-
-    const imageFile = formData.get('avatar');
-
+    console.log(profileObj, 'profile Obj');
+    const imageFile = formData.get('avatar-input');
+    console.log(imageFile, 'image file');
     if (imageFile.size) {
         const imagePath = `${user.id}/${imageFile.name}`;
 
         const url = await uploadImage(imagePath, imageFile);
 
-        profileObj.avatar_url = url;
+        profileObj.avatar = url;
     }
 
     const response = await upsertProfile(profileObj);

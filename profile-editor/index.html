@@ -7,7 +7,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
         <!-- title and favicon -->
-        <title>Supabase Web App</title>
+        <title>WasteNaut</title>
         <link
             rel="icon"
             type="image/x-icon"
@@ -19,7 +19,7 @@
             defer
             src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.35.7/dist/umd/supabase.min.js"
         ></script>
-        <script type="module" src="app.js"></script>
+        <script type="module" src="profile-editor.js"></script>
 
         <!-- fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -62,19 +62,21 @@
                     <div class="name-display">
                         <label>Favorite food:</label>
                         <input name="fav-food" id="fav-food" />
-                        <label
-                            >Username
-                            <input
-                                name="username"
-                                minlength="3"
-                                required
-                                placeholder="choose a username..."
-                            />
-                        </label>
-                        <label>
-                            Avatar:
-                            <input type="file" name="avatar" placeholder="upload an image" />
-                        </label>
+                        <label>Username</label>
+                        <input
+                            name="username"
+                            minlength="3"
+                            required
+                            placeholder="choose a username..."
+                        />
+                        <label> Avatar:</label>
+                        <input
+                            id="img-input"
+                            type="file"
+                            name="avatar-input"
+                            placeholder="upload an image"
+                        />
+
                         <img
                             id="preview"
                             class="avatar"
