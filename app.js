@@ -1,7 +1,7 @@
 /* Imports */
 // this will check if we have a user and set signout link if it exists
 import './auth/user.js';
-import { createListItem, getList, getProfile, getUser } from './fetch-utils.js';
+import { createFreshness, createListItem, getList, getProfile, getUser } from './fetch-utils.js';
 import { renderList } from './render-utils.js';
 
 /* Get DOM Elements */
@@ -22,9 +22,12 @@ form.addEventListener('submit', async (e) => {
     const data = new FormData(form);
     const name = data.get('name');
     const quantity = data.get('quantity');
+    const date = data.get('date');
 
     const newItem = await createListItem(name, quantity);
-    if (newItem) {
+    console.log('newItem', newItem);
+    const freshness = await createFreshness(date, newItem[0].id);
+    if (newItem && freshness) {
         displayList();
         // } else {
         //     error.textContent = 'Something went wrong while adding your item';

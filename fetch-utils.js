@@ -61,7 +61,7 @@ export async function upsertProfile(profile) {
 export async function createListItem(name, quantity) {
     const user = getUser();
     const profile = await getProfile(user.id);
-    console.log(profile.data, 'profile');
+    // console.log(profile.data, 'profile');
     const response = await client.from('produce').insert({
         name: name,
         quantity: quantity,
@@ -73,9 +73,19 @@ export async function createListItem(name, quantity) {
     return response.data;
 }
 // }
+export async function createFreshness(freshness, produce_id) {
+    const user = getUser();
+    const profile = await getProfile(user.id);
+    console.log('profile', profile);
+    const response = await client.from('expiration').insert({
+        produce_id: produce_id,
+        freshness: freshness,
+    });
+    return response.data;
+}
 
 export async function getList(profile_id) {
-    const response = await client.from('produce').select('*').match({
+    const response = await client.from('produce').select('*, expiration(*)').match({
         profile_id,
     });
     // if (response.error) {
