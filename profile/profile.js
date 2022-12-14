@@ -1,3 +1,4 @@
+import '../auth/user.js';
 import { getProfile, getProfileById, getUser } from '../fetch-utils.js';
 
 const profileDetailEl = document.querySelector('#profile-display');

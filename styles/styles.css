@@ -1,8 +1,6 @@
-/* main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-} */
+body {
+    background: black;
+}
 
 .hero-banner img {
     height: auto;
@@ -10,11 +8,8 @@
 }
 
 .flex-parent {
-    display: flex;
-    justify-content: row;
-    align-items: left;
-    justify-items: stretch;
-    /* max-width: 1fr 1fr; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
 .createForm {
@@ -22,13 +17,35 @@
     padding: 10px;
     display: flex;
     flex-direction: column;
-    height: 375px;
-    width: 375px;
+    align-items: center;
+    background: black;
+    color: white;
+}
+
+.createForm input,
+button {
+    max-width: 400px;
+    min-width: 250px;
 }
 
 .box {
     display: flex;
-    justify-content: row;
-    align-items: right;
-    height: 375px;
+    justify-content: center;
+    background: black;
+}
+
+.box img {
+    width: 400px;
+}
+
+h2 {
+    font-size: 3px;
+}
+
+.produce-list {
+    border: red solid 5px;
+    width: 1fr;
+    min-height: 450px;
+    background: #ea2160;
+    font-size: 50px;
 }
