@@ -6,6 +6,10 @@ Create an app where you can track produce waste. Please see Miro board attached 
 
 https://miro.com/app/board/uXjVP7afg1Q=/
 
+## SupaBase tables
+
+![](/assets/supabase.png)
+
 Font families
 
 font-family: 'Jost', sans-serif; (main text)
