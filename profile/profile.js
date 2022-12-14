@@ -1,5 +1,4 @@
 import { getProfile, getProfileById, getUser } from '../fetch-utils.js';
-import { renderProfile } from '../render-utils.js';
 
 const profileDetailEl = document.querySelector('#profile-display');
 const usernameHeaderEl = document.querySelector('.username-header');

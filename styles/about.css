@@ -1,0 +1,18 @@
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.andrew {
+    border: 5px black solid;
+}
+
+.ashton {
+    border: 5px black solid;
+}
+
+.brenley {
+    border: 5px black solid;
+}
