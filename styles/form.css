@@ -11,7 +11,7 @@ form:not(.inline) {
 }
 
 label {
-    font-family: 'Titillium Web';
+    font-family: var(--primary-font);
     font-size: 0.9em;
     font-weight: bold;
     color: var(--label-color);
@@ -55,6 +55,7 @@ form button {
     height: 45px;
     background: var(--action-color);
     border: 0;
+    font-family: var(--primary-font);
     font-weight: bold;
     color: white;
 }
