@@ -1,5 +1,4 @@
 :root {
-    --background: rgb(224, 234, 247);
     --header-background: white;
     --text-color: rgb(7, 5, 68);
     --label-color: rgb(75, 102, 98);
@@ -51,6 +50,7 @@ body {
 
 main {
     padding: 20px;
+    background: linear-gradient(to bottom, #fee048 0%, #c9d039 66%);
 }
 
 .avatar {
