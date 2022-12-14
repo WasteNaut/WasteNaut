@@ -107,3 +107,8 @@ export async function uploadImage(imagePath, imageFile) {
     const url = `${SUPABASE_URL}/storage/v1/object/public/${response.data.Key}`;
     return url;
 }
+
+export async function deleteList(id) {
+    await client.from('expiration').delete('*, produce(id)').match({ produce_id: id });
+    await client.from('produce').delete().match({ id });
+}
