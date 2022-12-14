@@ -45,6 +45,7 @@
             <nav>
                 <a id="profile" href="profile">My Profile</a>
                 <a href="/">Home</a>
+                <a id="about" href="about-me">About</a>
                 <a id="sign-out-link" href="auth">Sign Out</a>
  
 
@@ -55,32 +56,33 @@
             <div class="hero-banner">
             <img id="hero-banner" src="./assets/HeroImage.1.png" height="300px"/>
             </div>
-            <form class="createForm">
-            <div class="produce-form">
-            <div class="produce">
+            <div class="flex-parent">
+                <form class="createForm">
+                    <!-- <div class="produce-form"> -->
+            <!-- <div class="produce"> -->
             <input name="name" id="produce" type="text">Add Your Produce Here!</input>
-            </div>
-            <div class ="quantity">
+            <!-- </div> -->
+            <!-- <div class ="quantity"> -->
             <input type="number" id="quantity" min="1" max="25" name="quantity">
                 Quantity
             </input>
-            </div>
-            <div class="expiration">
-            <input name="date" required type="date" id="expiration" min="1" max="14">
+            <!-- <div class="expiration"> -->
+                <input name="date" required type="date" id="expiration" min="1" max="14">
                 Expiration
             </input>
-        </div>
             <button type="submit" id="submit-btn">Submit</button>
-            </div>
         </form>
+        <div class="box">
+            <img src="./assets/square.png">
+        </div>
+    </div>
             <div class="produce-list">
-                
             </div>
         </main>
         <footer>
-            <div class="about">
+            <!-- <div class="about">
                 <a id="about-link" href="/about-me/">About us</a>
-            </div>
+            </div> -->
         </footer>
     </body>
 </html>
