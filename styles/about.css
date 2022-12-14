@@ -16,3 +16,11 @@ main {
 .brenley {
     border: 5px black solid;
 }
+
+img {
+    height: 300px;
+}
+
+p {
+    text-align: center;
+}
