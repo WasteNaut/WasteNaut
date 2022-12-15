@@ -66,8 +66,6 @@ h2 {
     background: #c9d309;
     font-size: 50px;
     font-weight: bolder;
-    display: flex;
-    align-items: center;
 }
 
 .delete-btn {
