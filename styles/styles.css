@@ -5,6 +5,7 @@ body {
 .hero-banner img {
     height: auto;
     max-width: 100%;
+    border: 3px solid white;
 }
 
 .flex-parent {
@@ -13,20 +14,49 @@ body {
 }
 
 .createForm {
-    border: 3px solid;
     padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     background: black;
     color: white;
 }
 
-.createForm input,
-button {
+.createForm input {
     max-width: 400px;
     min-width: 250px;
 }
+
+input {
+    padding: 15px;
+    margin: 5px;
+    font-size: 20px;
+}
+
+#submit-btn {
+    height: 35px;
+    width: 250px;
+    font-size: 20px;
+    background-color: #019647;
+    color: white;
+    margin-top: 10px;
+}
+
+/* .produce {
+    display: flex;
+    justify-content: center;
+}
+
+.quantity {
+    display: flex;
+    justify-content: center;
+}
+
+.expiration {
+    display: flex;
+    justify-content: center;
+} */
 
 .box {
     display: flex;
@@ -46,6 +76,7 @@ h2 {
     border: red solid 5px;
     width: 1fr;
     min-height: 450px;
-    background: #ea2160;
+    background: #c9d309;
     font-size: 50px;
+    font-weight: bolder;
 }

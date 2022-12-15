@@ -55,6 +55,7 @@ async function displayList() {
         for (let name of list) {
             const listItemEl = renderList(name);
             const deleteBtn = document.createElement('button');
+            deleteBtn.classList.add('delete-btn');
             deleteBtn.addEventListener('click', async () => {
                 await deleteList(name.id);
                 console.log('name.id', name.id);
