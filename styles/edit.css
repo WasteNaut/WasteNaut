@@ -1,3 +1,7 @@
+body {
+    background: url(/assets/StarBack.png);
+}
+
 .hero-bannerEdit img {
     height: auto;
     max-width: 100%;

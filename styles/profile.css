@@ -1,3 +1,7 @@
+body {
+    background: url(/assets/StarBack.png);
+}
+
 main {
     display: flex;
     flex-direction: column;
@@ -7,4 +11,36 @@ main {
 .hero-bannerPE img {
     height: auto;
     max-width: 100%;
+    border: 5px white solid;
+}
+
+.profile-pic {
+    min-height: 350px;
+    max-height: 600px;
+    display: flex;
+    border-radius: 15px;
+}
+
+h2 {
+    color: black;
+}
+
+.head-user {
+    color: white;
+    font-size: 75px;
+}
+
+.food-tag {
+    color: white;
+    font-size: 50px;
+}
+
+#profile-display {
+    border: 5px solid white;
+    background: #d2d95e;
+    min-height: 300px;
+    min-width: 675px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
