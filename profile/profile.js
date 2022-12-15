@@ -19,7 +19,7 @@ async function fetchAndDisplayProfile() {
 
     const username = document.createElement('h2');
     username.classList.add('head-user');
-    username.textContent = `${profile.data.username}'s profile`;
+    username.textContent = `Wastenaut: ${profile.data.username}`;
     const imgEl = document.createElement('img');
     imgEl.classList.add('profile-pic');
     imgEl.src = profile.data.avatar;

@@ -20,8 +20,8 @@ label {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: rgb(199, 176, 176);
-    color: white;
+    background: #c9d309;
+    color: black;
     border: white 5px solid;
 }
 
