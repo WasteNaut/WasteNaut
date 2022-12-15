@@ -1,0 +1,79 @@
+body {
+    background: url(../assets/StarBack.png);
+    color: black;
+}
+
+.hero-bannerAB img {
+    height: auto;
+    max-width: 100%;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+.andrew {
+    padding: 10px;
+    margin: 5px;
+    background: rgb(100, 91, 4);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 15px;
+    border: 5px solid white;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+    color: #cec653;
+}
+
+.ashton {
+    padding: 10px;
+    margin: 5px;
+    background: rgb(59, 10, 99);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 15px;
+    border: 5px solid white;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+    color: #d4b9ff;
+}
+
+.brenley {
+    padding: 10px;
+    margin: 5px;
+    background: rgb(110, 13, 29);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 15px;
+    border: 5px solid white;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+    color: #f0a6a6;
+}
+
+.brenley img {
+    border-radius: 10px;
+}
+
+.andrew img {
+    border-radius: 10px;
+}
+
+.ashton img {
+    border-radius: 10px;
+}
+
+img {
+    height: 350px;
+    display: flex;
+}
+
+h1 {
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+}

@@ -1,0 +1,81 @@
+body {
+    background: url(/assets/StarBack.png);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-bannerPE img {
+    height: auto;
+    max-width: 100%;
+    border: 5px white solid;
+}
+
+.profile-pic {
+    min-height: 350px;
+    max-height: 600px;
+    display: flex;
+    border-radius: 15px;
+    border: 5px solid white;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+    color: #fcc742;
+}
+
+h2 {
+    color: black;
+}
+
+.head-user {
+    font-size: 40px;
+    background-color: white;
+    font-family: 'jost';
+    font-weight: bolder;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #000;
+    border: 3px solid;
+    padding: 0.25em 0.5em;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 500px;
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.food-tag {
+    background-color: white;
+    font-size: 25px;
+    font-family: 'jost';
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000;
+    border: 3px solid;
+    padding: 0.25em 0.5em;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 500px;
+    text-align: center;
+    margin-bottom: 75px;
+    margin-top: 50px;
+}
+
+#profile-display {
+    border: 5px solid white;
+    background: #ac5ed9;
+    min-height: 300px;
+    min-width: 675px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}

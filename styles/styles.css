@@ -1,0 +1,128 @@
+body {
+    background: url(../assets/StarBack.png);
+}
+
+.hero-banner img {
+    height: auto;
+    max-width: 100%;
+    border: 3px solid white;
+}
+
+.flex-parent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.createForm {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: black;
+    color: white;
+}
+
+.createForm input {
+    max-width: 400px;
+    min-width: 250px;
+}
+
+input {
+    padding: 15px;
+    margin: 5px;
+    font-size: 20px;
+    font-family: 'jost';
+    font-weight: bold;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    background: black;
+}
+
+.box img {
+    width: 400px;
+}
+
+h2 {
+    font-size: 3px;
+}
+
+.produce-list {
+    border: white solid 5px;
+    width: 1fr;
+    padding-top: 20px;
+    padding-left: 50px;
+    min-height: 450px;
+    background: #c9d309;
+    font-size: 50px;
+    font-weight: bolder;
+    font-family: 'jost';
+}
+
+.delete-btn {
+    font-family: 'jost';
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000;
+    cursor: pointer;
+    border: 3px solid;
+    padding: 0.25em 0.5em;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    margin-left: 250px;
+}
+
+.delete-btn:active {
+    box-shadow: 0px 0px 0px 0px;
+    top: 5px;
+    left: 5px;
+}
+
+@media (min-width: 768px) {
+    .delete-btn {
+        padding: 0.25em 0.75em;
+    }
+}
+
+.button-50 {
+    font-family: 'jost';
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000;
+    cursor: pointer;
+    border: 3px solid;
+    padding: 0.1em 0.5em;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    background-color: #019647;
+    color: #ffffff;
+    height: 35px;
+    width: 250px;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.button-50:active {
+    box-shadow: 0px 0px 0px 0px;
+    top: 5px;
+    left: 5px;
+}
+
+@media (min-width: 768px) {
+    .button-50 {
+        padding: 0.25em 0.75em;
+    }
+}
