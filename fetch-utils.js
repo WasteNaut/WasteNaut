@@ -40,11 +40,10 @@ export async function getProfile(user_id) {
 
 export async function getProfileById(id) {
     const response = await client.from('profiles').select('*').match({ id }).single();
-    // return checkError(response);
 
     return response;
 }
-// }
+
 
 export async function upsertProfile(profile) {
     const response = await client
@@ -54,29 +53,23 @@ export async function upsertProfile(profile) {
 
     return response;
 }
-// create getProfileById function
-// call it inside createListItem and set it to variable
-// pass it through .insert and set it equal to profileId
 
 export async function createListItem(name, quantity) {
     const user = getUser();
     const profile = await getProfile(user.id);
-    // console.log(profile.data, 'profile');
     const response = await client.from('produce').insert({
         name: name,
         quantity: quantity,
         profile_id: profile.data.id,
     });
-    // if (response.error) {
-    //     console.error(response.error.message);
-    // } else {
+
     return response.data;
 }
-// }
+
 export async function createFreshness(freshness, produce_id) {
     const user = getUser();
     const profile = await getProfile(user.id);
-    console.log('profile', profile);
+    
     const response = await client.from('expiration').insert({
         produce_id: produce_id,
         freshness: freshness,
@@ -88,12 +81,10 @@ export async function getList(profile_id) {
     const response = await client.from('produce').select('*, expiration(*)').match({
         profile_id,
     });
-    // if (response.error) {
-    //     console.error(response.error.message);
-    // } else {
+    
     return response.data;
 }
-// }
+
 
 export async function uploadImage(imagePath, imageFile) {
     const bucket = client.storage.from('avatars');

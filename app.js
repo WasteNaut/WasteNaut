@@ -1,5 +1,4 @@
 /* Imports */
-// this will check if we have a user and set signout link if it exists
 import './auth/user.js';
 import {
     createFreshness,
@@ -37,8 +36,6 @@ form.addEventListener('submit', async (e) => {
 
     if (newItem && freshness) {
         displayList();
-        // } else {
-        //     error.textContent = 'Something went wrong while adding your item';
     }
     form.reset();
 });
