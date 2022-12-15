@@ -9,8 +9,3 @@ https://miro.com/app/board/uXjVP7afg1Q=/
 ## SupaBase tables
 
 ![](/assets/supabase.png)
-
-Font families
-
-font-family: 'Jost', sans-serif; (main text)
-font-family: 'Righteous', cursive; (header text)

@@ -5,4 +5,16 @@ body {
 .hero-bannerEdit img {
     height: auto;
     max-width: 100%;
+    border: 5px solid white;
+}
+
+.name-display {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: black;
+    color: white;
+    border: white 5px solid;
 }
