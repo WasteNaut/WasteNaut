@@ -25,4 +25,8 @@ https://miro.com/app/board/uXjVP7afg1Q=/
 
 ![](/assets/supabase.png)
 
-CSS Buttons: Michael McMillan
+## Thanks
+
+Michael McMillan for the CSS button design
+
+https://amazing-kashata-d5b7a1.netlify.app/
