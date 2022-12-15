@@ -43,21 +43,6 @@ input {
     margin-top: 10px;
 }
 
-/* .produce {
-    display: flex;
-    justify-content: center;
-}
-
-.quantity {
-    display: flex;
-    justify-content: center;
-}
-
-.expiration {
-    display: flex;
-    justify-content: center;
-} */
-
 .box {
     display: flex;
     justify-content: center;
@@ -73,10 +58,21 @@ h2 {
 }
 
 .produce-list {
-    border: red solid 5px;
+    border: white solid 5px;
     width: 1fr;
+    padding-top: 20px;
+    padding-left: 50px;
     min-height: 450px;
     background: #c9d309;
     font-size: 50px;
     font-weight: bolder;
+    display: flex;
+    align-items: center;
+}
+
+.delete-btn {
+    height: 30px;
+    width: 100px;
+    margin-left: 300px;
+    background-color: #ea2160;
 }
