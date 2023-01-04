@@ -68,22 +68,22 @@ async function displayList() {
     }
 }
 
-export async function CheckEx(produce_id, freshness) {
-    timeEl.textContent = '';
-    const expiration = await getList(produce_id.data.id, freshness.data.date);
-    if (expiration) {
-        const timeRemaining = freshness - Date.now();
-        if (timeRemaining < 86400000) {
-            // 24 hrs * 60 min/hour * 60 sec/min * 1000 milli/sec
-            sendAlert();
-        }
-        console.log('timeRemaining', timeRemaining);
-    }
-}
+// export async function CheckEx(produce_id, freshness) {
+//     timeEl.textContent = '';
+//     const expiration = await getList(produce_id.data.id, freshness.data.date);
+//     if (expiration) {
+//         const timeRemaining = freshness - Date.now();
+//         if (timeRemaining < 86400000) {
+//             // 24 hrs * 60 min/hour * 60 sec/min * 1000 milli/sec
+//             sendAlert();
+//         }
+//         console.log('timeRemaining', timeRemaining);
+//     }
+// }
 
-export async function sendAlert() {
-    console.log('Expiration alert: 24 hours remaining for one or more items in your tracker!');
-}
+// export async function sendAlert() {
+//     console.log('Expiration alert: 24 hours remaining for one or more items in your tracker!');
+// }
 
 deleteEl.addEventListener('click', async () => {
     await deleteList();
@@ -91,4 +91,4 @@ deleteEl.addEventListener('click', async () => {
     await displayList();
 });
 
-// TEST COMMENT
+// TEST COMMENT 2
