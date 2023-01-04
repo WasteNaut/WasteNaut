@@ -3,7 +3,6 @@ import { getProfile, getProfileById, getUser } from '../fetch-utils.js';
 
 const profileDetailEl = document.querySelector('#profile-display');
 const usernameHeaderEl = document.querySelector('.username-header');
-// const imgEl = document.getElementById('img-input');
 
 const user = getUser();
 
@@ -15,7 +14,6 @@ async function fetchAndDisplayProfile() {
     profileDetailEl.textContent = '';
 
     const profile = await getProfile(user.id);
-    console.log(profile.data, 'profile');
 
     const username = document.createElement('h2');
     username.classList.add('head-user');
