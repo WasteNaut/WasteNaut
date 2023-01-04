@@ -2,6 +2,7 @@
 // this will check if we have a user and set signout link if it exists
 import './auth/user.js';
 import {
+    // CheckEx,
     createFreshness,
     createListItem,
     deleteList,
@@ -32,7 +33,7 @@ form.addEventListener('submit', async (e) => {
     const date = data.get('date');
 
     const newItem = await createListItem(name, quantity);
-    console.log('newItem', newItem);
+    // console.log('newItem', newItem);
     const freshness = await createFreshness(date, newItem[0].id);
 
     if (newItem && freshness) {
@@ -65,6 +66,23 @@ async function displayList() {
             listEl.append(listItemEl, deleteBtn);
         }
     }
+}
+
+export async function CheckEx(produce_id, freshness) {
+    timeEl.textContent = '';
+    const expiration = await getList(produce_id.data.id, freshness.data.date);
+    if (expiration) {
+        const timeRemaining = freshness - Date.now();
+        if (timeRemaining < 86400000) {
+            // 24 hrs * 60 min/hour * 60 sec/min * 1000 milli/sec
+            sendAlert();
+        }
+        console.log('timeRemaining', timeRemaining);
+    }
+}
+
+export async function sendAlert() {
+    console.log('Expiration alert: 24 hours remaining for one or more items in your tracker!');
 }
 
 deleteEl.addEventListener('click', async () => {

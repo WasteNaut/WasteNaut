@@ -112,3 +112,19 @@ export async function deleteList(id) {
     await client.from('expiration').delete('*, produce(id)').match({ produce_id: id });
     await client.from('produce').delete().match({ id });
 }
+
+// export async function CheckEx(produce_id, freshness) {
+//     const expiration = await getList(produce_id.data.id, freshness.data.date);
+//     if (expiration) {
+//         const timeRemaining = freshness - Date.now();
+//         if (timeRemaining < 86400000) {
+//             // 24 hrs * 60 min/hour * 60 sec/min * 1000 milli/sec
+//             sendAlert();
+//         }
+//         console.log('expiration', expiration);
+//     }
+// }
+
+// export async function sendAlert() {
+//     console.log('Expiration alert: 24 hours remaining for one or more items in your tracker!');
+// }
