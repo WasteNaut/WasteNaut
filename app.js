@@ -1,4 +1,5 @@
 /* Imports */
+// this will check if we have a user and set signout link if it exists
 import './auth/user.js';
 import {
     // CheckEx,
@@ -37,8 +38,34 @@ form.addEventListener('submit', async (e) => {
 
     if (newItem && freshness) {
         displayList();
+        // } else {
+        //     error.textContent = 'Something went wrong while adding your item';
     }
     form.reset();
+
+    var GivenDate = date;
+    var CurrentDate = new Date();
+
+    GivenDate = new Date(GivenDate);
+
+    function getDaysDiff(date1, date2) {
+        const diff = Math.abs(date1 - date2);
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        return days;
+    }
+
+    // const date1 = GivenDate;
+    // const date2 = CurrentDate;
+
+    const diff = getDaysDiff(GivenDate, CurrentDate);
+    console.log(diff); // Output: 4
+
+    if (GivenDate > CurrentDate) {
+        alert(`Your ${name} have ${diff} days before they expire! `);
+    } else {
+        alert('Given date is not greater than the current date.');
+    }
+    console.log('GivenDate', GivenDate);
 });
 
 /* Display Functions */
@@ -65,27 +92,19 @@ async function displayList() {
     }
 }
 
-// export async function CheckEx(produce_id, freshness) {
-//     timeEl.textContent = '';
-//     const expiration = await getList(produce_id.data.id, freshness.data.date);
-//     if (expiration) {
-//         const timeRemaining = freshness - Date.now();
-//         if (timeRemaining < 86400000) {
-//             // 24 hrs * 60 min/hour * 60 sec/min * 1000 milli/sec
-//             sendAlert();
-//         }
-//         console.log('timeRemaining', timeRemaining);
-//     }
+// deleteEl.addEventListener('click', async () => {
+//     await deleteList();
+
+//     await displayList();
+// });
+
+// var GivenDate = '12-29-2022';
+// var CurrentDate = new Date();
+// GivenDate = new Date(GivenDate);
+
+// if (GivenDate > CurrentDate) {
+//     alert('Given date is greater than the current date.');
+// } else {
+//     alert('Given date is not greater than the current date.');
 // }
-
-// export async function sendAlert() {
-//     console.log('Expiration alert: 24 hours remaining for one or more items in your tracker!');
-// }
-
-deleteEl.addEventListener('click', async () => {
-    await deleteList();
-
-    await displayList();
-});
-
-// TEST COMMENT 2
+// console.log('GivenDate', GivenDate);

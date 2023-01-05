@@ -6,7 +6,7 @@ const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 /* Auth related functions */
 
 export function getUser() {
-    console.log(client.auth.user());
+    // console.log(client.auth.user());
     return client.auth.user();
 }
 
@@ -44,7 +44,6 @@ export async function getProfileById(id) {
     return response;
 }
 
-
 export async function upsertProfile(profile) {
     const response = await client
         .from('profiles')
@@ -69,7 +68,7 @@ export async function createListItem(name, quantity) {
 export async function createFreshness(freshness, produce_id) {
     const user = getUser();
     const profile = await getProfile(user.id);
-    
+
     const response = await client.from('expiration').insert({
         produce_id: produce_id,
         freshness: freshness,
@@ -81,10 +80,9 @@ export async function getList(profile_id) {
     const response = await client.from('produce').select('*, expiration(*)').match({
         profile_id,
     });
-    
+
     return response.data;
 }
-
 
 export async function uploadImage(imagePath, imageFile) {
     const bucket = client.storage.from('avatars');
